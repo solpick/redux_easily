@@ -47,3 +47,28 @@ console.log("arr1 === arr2: ",arr1 === arr2);
 
 // console.log('----test: ',JSON.stringify(test));
 // console.log('----test2: ',JSON.stringify(test2));
+
+// let object1 = {
+//     a: 1,
+//     b: 2,
+//     c: 3,
+//     d: {
+//         e: 4,
+//         f: {
+//             g: 5,
+//             h: 6
+//         }
+//     }
+// };
+
+// let object2 = {
+//     ...object1,
+//     d: {
+//         ...object1.d,
+//         f: {
+//             ... object1.d.f,
+//             h: 10
+//         }
+//     }
+// }
+// console.log(JSON.stringify(object2))
