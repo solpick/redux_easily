@@ -8,7 +8,8 @@
             "type": "node",
             "request": "launch",
             "name": "input 테스트",
-            "program": "${workspaceFolder}/src/modules/input.js"
+            "program": "${workspaceFolder}/src/modules/input.js",
+            "runtimeExecutable": "${workspaceRoot}\\node_modules\\.bin\\babel-node",
         },
         {
             "type": "node",
@@ -17,5 +18,5 @@
             "program": "${workspaceFolder}\\14.1.1.js"
         }
     ],
-    "sourceMaps": true,
+   
 }
