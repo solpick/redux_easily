@@ -31,6 +31,6 @@ export default handleActions({
     [SET_INPUT]: (state, action) => {
         return state.set('value', action.payload);
     }
-})
+}, initialState);
 
 //Ducks 구조로 만들기 완료.
