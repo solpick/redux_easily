@@ -1,4 +1,4 @@
-import { Map } from "immutable";
+import produce from "immer";
 import { handleActions, createAction } from "redux-actions"
 
 // 액션 타입 형식.
@@ -22,14 +22,17 @@ export const setInput = createAction(SET_INPUT);
 
 
 // 초기값 셋팅 (immutable 사용)
-const initialState = Map({
+const initialState = {
     value: ''
-});
+}
 
  // 리듀서 생성
 export default handleActions({
     [SET_INPUT]: (state, action) => {
-        return state.set('value', action.payload);
+        //produce 함수를 작성, param으로 현재 상태(currentState), draft(다음상태가 될 것)를 받는다.
+        return produce(state, draft => {
+            draft.value = action.payload
+        });
     }
 }, initialState);
 

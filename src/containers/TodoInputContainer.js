@@ -46,7 +46,7 @@ class TodoInputContainer extends Component {
 
 export default connect(
     (state) => ({
-        value: state.input.get('value')
+        value: state.input.value
     }),
     (dispatch) => ({
         InputActions: bindActionCreators(inputActions, dispatch),
