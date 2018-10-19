@@ -25,14 +25,12 @@ export const setInput = createAction(SET_INPUT);
 const initialState = Map({
     value: ''
 });
-let t = initialState.getIn(['value']);
-console.log(t);
 
  // 리듀서 생성
 export default handleActions({
     [SET_INPUT]: (state, action) => {
         return state.set('value', action.payload);
     }
-})
+}, initialState);
 
 //Ducks 구조로 만들기 완료.
