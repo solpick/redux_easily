@@ -25,7 +25,29 @@ const initialState = List([
         done: false
     }),
 ])
-// list.get(n); 
-// List 배열의 인덱스 번호로 접근.
-// list.getIn([0, 'value'])
-// getIn으로 인덱스와, 키값을 넣어 값 읽어오기.
+
+
+export default handleActions({
+    [INSERT]: (state, action) => {
+        const { id, text, done } = action.payload;
+        // 이 액션이 어떤 데이터를 처리하는지 쉽게 볼 수 있도록 레퍼런스를 만들어준다.
+        // 비구조화 할당
+        return state.push(Map({
+            id,
+            text,
+            done
+        }));
+    },
+    [TOGGLE]: (state, action) => {
+        const { payload: index} = action;
+        // const index = action.payload;
+        // payload의 값을 index란 이름으로 지정.
+
+        return state.updateIn([index, 'done'], done => !done);
+        // updateIn : 현재의 값을 참조할 수있음.
+    },
+    [REMOVE]: (state, action) => {
+        const { payload: index} = action;
+        return state.delete(index);
+    }
+}, initialState);
