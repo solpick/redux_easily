@@ -47,7 +47,7 @@ export default handleActions({
         // updateIn : 현재의 값을 참조할 수있음.
     },
     [REMOVE]: (state, action) => {
-        const { payload: index} = action;
+        const { payload: index } = action;
         return state.delete(index);
     }
 }, initialState);
