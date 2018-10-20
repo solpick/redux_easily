@@ -1,5 +1,5 @@
 import produce from "immer";
-import { handleActions, createAction } from "redux-actions"
+import { handleActions, createAction } from "redux-actions";
 
 // 액션 타입 형식.
 const SET_INPUT = 'input/SET_INPUT';
